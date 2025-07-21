@@ -1,1 +1,67 @@
-<!-- v7 HTML avec onglets, talents, gacha cristal, etc. -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Idle Gacha RPG v7</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: sans-serif; background-color: #1e1e1e; color: white; margin: 0; padding: 0; }
+    .tab { display: none; padding: 1rem; }
+    .tab.active { display: block; }
+    nav { display: flex; flex-wrap: wrap; background-color: #333; padding: 0.5rem; }
+    nav button { margin: 0.2rem; padding: 0.5rem; background: #444; color: white; border: none; cursor: pointer; }
+    nav button:hover { background: #666; }
+    #game-log { background: black; padding: 0.5rem; margin-top: 1rem; height: 100px; overflow-y: auto; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <button onclick="showTab('game')">Jeu</button>
+  <button onclick="showTab('gacha')">Gacha</button>
+  <button onclick="showTab('inventory')">Inventaire</button>
+  <button onclick="showTab('equipment')">Équipement</button>
+  <button onclick="showTab('talents')">Talents</button>
+  <button onclick="showTab('success')">Succès</button>
+  <button onclick="showTab('zones')">Zones</button>
+</nav>
+
+<div id="game" class="tab active">
+  <h2>Combat</h2>
+  <div id="enemy-container">
+    <p>Ennemi : <span id="enemy-name">Kiki</span></p>
+    <p>PV : <span id="enemy-hp">100</span></p>
+    <button onclick="clickAttack()">Attaquer</button>
+  </div>
+  <div id="player-stats">
+    <p>Niveau : <span id="player-level">1</span></p>
+    <p>DPS : <span id="dps">1</span></p>
+    <p>Or : <span id="gold">0</span></p>
+    <p>Prestige : <span id="prestige">0</span></p>
+  </div>
+  <div id="game-log"></div>
+</div>
+
+<div id="gacha" class="tab"><h2>🎰 Gacha</h2><p>Interface gacha à venir...</p></div>
+<div id="inventory" class="tab"><h2>🎒 Inventaire</h2><div id="inventory-list"></div></div>
+<div id="equipment" class="tab"><h2>⚔️ Équipement</h2><p>À venir...</p></div>
+<div id="talents" class="tab"><h2>🌟 Talents</h2><p>À venir...</p></div>
+<div id="success" class="tab"><h2>🏆 Succès</h2><p>À venir...</p></div>
+<div id="zones" class="tab"><h2>🌍 Zones</h2><p>Zone actuelle : Forêt</p></div>
+
+<script>
+function showTab(tabId) {
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.classList.remove('active');
+  });
+  document.getElementById(tabId).classList.add('active');
+}
+</script>
+
+<script>
+// JS avec talents, prestige, objets évolutifs, dialogues, boss, etc.
+</script>
+
+</body>
+</html>
